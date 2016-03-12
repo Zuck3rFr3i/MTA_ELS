@@ -1,0 +1,6 @@
+<meta>
+	<script src="client/client.lua" type="client" cache="false" />
+	<script src="server/server.lua" type="server" />
+	<include resource="custom_coronas" />
+	<include resource="dynamic_lighting" />
+</meta>
