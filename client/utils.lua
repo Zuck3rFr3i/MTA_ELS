@@ -6,6 +6,10 @@
 -------------------------------------------------------------------------------------------
 
 
+--//
+--||    getPositionFromElementOffset
+--\\
+
 function getPositionFromElementOffset(element,offX,offY,offZ)
     local m = getElementMatrix ( element )  -- Get the matrix
     local x = offX * m[1][1] + offY * m[2][1] + offZ * m[3][1] + m[4][1]  -- Apply transform
@@ -15,10 +19,18 @@ function getPositionFromElementOffset(element,offX,offY,offZ)
 end
 
 
+--//
+--||    isVehicle
+--\\
 
 function isVehicle(uElement)
     return isElement(uElement) and getElementType(uElement) == "vehicle"
 end
+
+
+--//
+--||    isPlayer
+--\\
 
 function isPlayer(uElement)
     return isElement(uElement) and getElementType(uElement) == "player"
