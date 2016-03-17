@@ -1,6 +1,17 @@
 <meta>
-	<script src="client/client.lua" type="client" cache="false" />
-	<script src="server/server.lua" type="server" />
-	<include resource="custom_coronas" />
+	<info name="MTA-ELS" author="MasterM, Zuck3rFr3i" type="script" version="1.0"/>
+	<min_mta_version client="1.5.0" server="1.5.0" />
 	<include resource="dynamic_lighting" />
+
+	<!--client-->
+		<script src="client/utils.lua" type="client" cache="false" />
+		<script src="client/client.lua" type="client" cache="false" />
+
+	<!--server-->
+		<script src="server/server.lua" type="server" />
+
+	<!--resources-->
+		<file src="res/light_source.png" />
+
+
 </meta>
