@@ -3,8 +3,12 @@
 	<min_mta_version client="1.5.0" server="1.5.0" />
 	<include resource="dynamic_lighting" />
 
+	<!--shared-->
+		<script src="shared/utils.lua" type="shared" cache="false"/>
+		<script src="shared/presets.lua" type="shared" cache="false"/>
+
+
 	<!--client-->
-		<script src="client/utils.lua" type="client" cache="false" />
 		<script src="client/client.lua" type="client" cache="false" />
 
 	<!--server-->

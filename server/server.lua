@@ -15,6 +15,7 @@ local changeVehicleELSState
 --events
 addEvent("ELS:onClientJoin", true)
 addEvent("ELS:onVehicleStateChange", true)
+addEvent("ELS:onVehicleAddByPreset", true) -- if a vehicle has a preset (shared/presets.lua), but no lights added yet, just add them
 
 
 --//
@@ -43,7 +44,8 @@ end
 --||	changeVehicleELSState
 --\\
 
-function changeVehicleELSState(bOn)
+function changeVehicleELSState(bOn, uVeh)
+	if isVehicle(uVeh) then source = uVeh end
 	if hasVehicleELS(source) then
 		local bCurrent = tblELSVehs[source].bOn
 		triggerClientEvent("ELS:onVehicleStateChanged", source, bOn)
@@ -56,14 +58,40 @@ end
 --||	addVehicleELS
 --\\
 
-function addVehicleELS(uVeh, tblLights)
-	if not tblELSVehs[uVeh] then
-		tblELSVehs[uVeh] = tblLights
-		addEventHandler("onElementDestroy", uVeh, function() removeVehicleELS(source) end)
-		addEventHandler("onVehicleExplode", uVeh, changeVehicleELSState)
-		addEventHandler("ELS:onVehicleStateChange", uVeh, changeVehicleELSState)
-		triggerClientEvent("ELS:onVehicleAdd", resourceRoot, uVeh, tblLights)
+function addVehicleELS(uVeh, tblLights, bOn)
+	if isVehicle(uVeh) then
+		if not tblELSVehs[uVeh] then
+			if not tblLights then
+				if tblELSPresets[getElementModel(uVeh)] then
+					tblELSVehs[uVeh] = tblELSPresets[getElementModel(uVeh)]
+					tblELSVehs[uVeh].bPreset = true
+					tblELSVehs[uVeh].bOn = bOn
+				else
+					return false
+				end
+			else
+				tblELSVehs[uVeh] = tblLights
+			end
+			addEventHandler("onElementDestroy", uVeh, function() removeVehicleELS(source) end)
+			addEventHandler("onVehicleExplode", uVeh, changeVehicleELSState)
+			addEventHandler("ELS:onVehicleStateChange", uVeh, changeVehicleELSState)
+			triggerClientEvent("ELS:onVehicleAdd", resourceRoot, uVeh, tblELSVehs[uVeh])
+		end
 	end
+end
+
+
+--//
+--||	getVehicleELSPresets
+--\\
+
+function getVehicleELSPresets(uVeh)
+	if isVehicle(uVeh) then
+		if tblELSPresets[getElementModel(uVeh)] then
+			return tblELSPresets[getElementModel(uVeh)]
+		end
+	end
+	return false
 end
 
 
@@ -75,6 +103,16 @@ addEventHandler("ELS:onClientJoin", resourceRoot, function()
 	triggerLatentClientEvent(client, "ELS:onLightRecieve", resourceRoot, tblELSVehs) -- latent to reduce bandwidth
 end)
 
+
+--//
+--||	add ELS to vehicles with preset
+--\\
+
+addEventHandler("ELS:onVehicleAddByPreset", resourceRoot, function(uVeh, bOn)
+	if getVehicleELSPresets(uVeh) then
+		addVehicleELS(uVeh, nil, bOn)
+	end
+end)
 
 --//
 --||	debug!
@@ -144,8 +182,8 @@ local veh = createVehicle(411, 0, 0, 5)
 							addVehicleELS(veh, tblLights)
 							triggerEvent("ELS:onVehicleStateChange", veh, true)
 							local veh = createVehicle(490, 35, 0, 5)
-								addVehicleELS(veh, tblFBILights)
-								triggerEvent("ELS:onVehicleStateChange", veh, true)
+								--addVehicleELS(veh, tblFBILights)
+								--triggerEvent("ELS:onVehicleStateChange", veh, true)
 end, 500, 1)
 
 end)
