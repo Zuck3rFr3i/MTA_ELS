@@ -10,6 +10,7 @@
 
 	<!--client-->
 		<script src="client/client.lua" type="client" cache="false" />
+		<!--<script src="client/editor.lua" type="client" cache="false" />-->
 
 	<!--server-->
 		<script src="server/server.lua" type="server" />

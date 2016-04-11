@@ -16,6 +16,9 @@ local tblELSVehs = {}
 local tblRenderedELSVehs = {}
 local uLightImage
 
+local setting_toggleKeyBind = "l"
+
+
 --local functions
 local removeVehicleELS
 
@@ -115,7 +118,7 @@ local function renderELS()
 			removeVehicleELS(veh)
 		end
 	end
-	dxDrawText(getTickCount()-iStartStamp,0,0,500,500) --debug
+	--dxDrawText(getTickCount()-iStartStamp,0,0,500,500) --debug
 end
 addEventHandler("onClientPreRender", root, renderELS)
 
@@ -252,7 +255,7 @@ function InitLighting()
 		end
 	end
 end
-bindKey("L", "down", InitLighting)
+bindKey(setting_toggleKeyBind, "down", InitLighting)
 
 
 --//

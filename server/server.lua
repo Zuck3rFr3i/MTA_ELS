@@ -118,7 +118,8 @@ end)
 --||	debug!
 --\\
 
-local tblLights = {
+
+--[[local tblLights = {
 	duration = 1000,
 	lights = {
 		{x = -0.5, y = 0, z = 0.7, rz = 90, color = {255,0,0}, start = 0, stop = 250},
@@ -186,4 +187,4 @@ local veh = createVehicle(411, 0, 0, 5)
 								--triggerEvent("ELS:onVehicleStateChange", veh, true)
 end, 500, 1)
 
-end)
+end)]]

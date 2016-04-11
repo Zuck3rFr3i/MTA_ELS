@@ -98,4 +98,79 @@ tblELSPresets = {
     },
 
 
+    [544] = { -- Fire Truck Ladder
+        duration = 500,
+        lights = {
+            --top big
+            {x = 0.95,    y = 2, z = 1.5, rz = -100, color = {255,128,0}, start = 0,  stop = 200, size = 2},
+            {x = -0.95,    y = 2, z = 1.5, rz = 100, color = {255,128,0}, start = 0,  stop = 200, size = 2},
+            {x = -0.95,    y = 2.75, z = 1.5, rz = 80, color = {255,128,0}, start = 100,  stop = 300, size = 2},
+            {x = 0.95,    y = 2.75, z = 1.5, rz = -80, color = {255,128,0}, start = 100,  stop = 300, size = 2},
+
+            --top front
+            {x = 0.8,    y = 3.15, z = 1.45, rz = -80, color = {255,128,0}, start = 200,  stop = 500, size = 1, noshine = true},
+            {x = 0.3,    y = 3.15, z = 1.45, rz = -30, color = {255,128,0}, start = 100,  stop = 400, size = 1, noshine = true},
+            {x = -0.3,    y = 3.15, z = 1.45, rz = 30, color = {255,128,0}, start = 100,  stop = 400, size = 1, noshine = true},
+            {x = -0.8,    y = 3.15, z = 1.45, rz = 80, color = {255,128,0}, start = 200,  stop = 500, size = 1, noshine = true},
+
+            -- front
+            {x = -0.8,    y = 3.7, z = 0.06, color = {255,145.7,0}, start = 0,  stop = 250, size = 1, noshine = true},
+            {x = 0.8,    y = 3.7, z = 0.06, color = {255,145.7,0}, start = 0,  stop = 250, size = 1, noshine = true},
+            {x = 0.65,    y = 3.7, z = 0.06, color = {255,0,0}, start = 250,  stop = 500, size = 1, noshine = true},
+            {x = -0.65,    y = 3.7, z = 0.06, color = {255,0,0}, start = 250,  stop = 500, size = 1, noshine = true},
+        }
+	},
+    [427] = {--Enforcer
+        duration = 500,
+        lights = {
+    		-- top front
+            {x = -0.4, y = 1.1, z = 1.45, color = {255,0,0}, start = 0,  stop = 100, size = 2},
+            {x = 0.4, y = 1.1, z = 1.45, color = {255,0,0}, start = 0,  stop = 100, size = 2},
+            {x = -0.4, y = 1.1, z = 1.45, color = {255,0,0}, start = 150,  stop = 250, size = 2},
+            {x = 0.4, y = 1.1, z = 1.45, color = {255,0,0}, start = 150,  stop = 250, size = 2},
+            {x = 0, y = 1.1, z = 1.45, color = {255, 145,0}, start = 250,  stop = 350, size = 3},
+            {x = 0, y = 1.1, z = 1.45, color = {255, 145,0}, start = 400,  stop = 500, size = 3},
+
+    		-- center top
+            {x = 0.9, y = -0.25, z =  1.65, color = {255, 145,0}, start = 0,  stop = 250, size = 1, noshine = true},
+            {x = 0.9, y = -1.5, z =  1.65, color = {255, 145,0}, start = 250,  stop = 500, size = 1, noshine = true},
+            {x = 0.9, y = -2.8, z =  1.65, color = {255, 145,0}, start = 0,  stop = 250, size = 1, noshine = true},
+            {x = -0.9, y = -0.25, z =  1.65, color = {255, 145,0}, start = 0,  stop = 250, size = 1, noshine = true},
+            {x = -0.9, y = -1.5, z =  1.65, color = {255, 145,0}, start = 250,  stop = 500, size = 1, noshine = true},
+            {x = -0.9, y = -2.8, z =  1.65, color = {255, 145,0}, start = 0,  stop = 250, size = 1, noshine = true},
+
+
+    		-- side yellow
+            {x = 1.2, y = 0.1, z =  1.25, color = {255,145,0}, start = 0,  stop = 100, size = 1, noshine = true},
+            {x = 1.2, y = -1.65, z =  1.25, color = {255,145,0}, start = 150,  stop = 250, size = 1, noshine = true},
+            {x = 1.2, y = -3.4, z =  1.25, color = {255,145,0}, start = 0,  stop = 100, size = 1, noshine = true},
+            {x = -1.2, y = 0.1, z =  1.25, color = {255,145,0}, start = 0,  stop = 100, size = 1, noshine = true},
+            {x = -1.2, y = -1.65, z =  1.25, color = {255,145,0}, start = 150,  stop = 250, size = 1, noshine = true},
+            {x = -1.2, y = -3.4, z =  1.25, color = {255,145,0}, start = 0,  stop = 100, size = 1, noshine = true},
+
+
+    		-- side red
+                --first
+                {x = 1.2, y = 0.1, z = 0.95, color = {255, 0,0}, start = 0,  stop = 100, size = 1, noshine = true},
+                {x = 1.2, y = -1.6, z = 0.95, color = {255, 0,0}, start = 150,  stop = 250, size = 1, noshine = true},
+                {x = 1.2, y = -3.4, z = 0.95, color = {255, 0,0}, start = 0,  stop = 100, size = 1, noshine = true},
+                {x = -1.2, y = 0.1, z = 0.95, color = {255, 0,0}, start = 0,  stop = 100, size = 1, noshine = true},
+                {x = -1.2, y = -1.6, z = 0.95, color = {255, 0,0}, start = 150,  stop = 250, size = 1, noshine = true},
+                {x = -1.2, y = -3.4, z = 0.95, color = {255, 0,0}, start = 0,  stop = 100, size = 1, noshine = true},
+                --second
+                {x = 1.2, y = 0.1, z = 0.95, color = {255, 0,0}, start = 250,  stop = 350, size = 1, noshine = true},
+                {x = 1.2, y = -1.6, z = 0.95, color = {255, 0,0}, start = 400,  stop = 500, size = 1, noshine = true},
+                {x = 1.2, y = -3.4, z = 0.95, color = {255, 0,0}, start = 250,  stop = 350, size = 1, noshine = true},
+                {x = -1.2, y = 0.1, z = 0.95, color = {255, 0,0}, start = 250,  stop = 350, size = 1, noshine = true},
+                {x = -1.2, y = -1.6, z = 0.95, color = {255, 0,0}, start = 400,  stop = 500, size = 1, noshine = true},
+                {x = -1.2, y = -3.4, z = 0.95, color = {255, 0,0}, start = 250,  stop = 350, size = 1, noshine = true},
+
+            --back
+            {x = -0.95, y = -3.9, z = 0.65, color = {255, 0,0}, start = 200,  stop = 300, size = 1, noshine = true},
+            {x = 0.95, y = -3.9, z = 0.65, color = {255, 0,0}, start = 200,  stop = 300, size = 1, noshine = true},
+            {x = -0.95, y = -3.9, z = 0.65, color = {255, 0,0}, start = 350,  stop = 450, size = 1, noshine = true},
+            {x = 0.95, y = -3.9, z = 0.65, color = {255, 0,0}, start = 350,  stop = 450, size = 1, noshine = true},
+    	},
+    }
+
 }
